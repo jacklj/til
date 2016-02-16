@@ -1,0 +1,12 @@
+Z-index Stacking Contexts
+-------------------------
+stacking contexts = groups of elements with a common parent that are confined to a particular place in the stacking order
+
+Stacking contexts are formed when:
+1. an elements is the root element of the document (<html>)
+2. when position: anything but static and z-index != auto
+3. when an element has opacity < 1
+
+This is why sometimes no matter what you put an elements z-index, it doesn't do what you want.
+
+P.S. z-index only works on positioned elements
