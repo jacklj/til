@@ -1,0 +1,1 @@
+/usr/local/bin:/usr/local/heroku/bin:/Users/buster/.rvm/gems/ruby-2.0.0-p0/bin:/Users/buster/.rvm/gems/ruby-2.0.0-p0@global/bin:/Users/buster/.rvm/rubies/ruby-2.0.0-p0/bin:/Users/buster/.rvm/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/bin:/opt/local/bin:/opt/local/sbin:/bin:/usr/sbin:/sbin:/opt/X11/bin
