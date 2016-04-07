@@ -1,0 +1,11 @@
+
+3
+down vote
+accepted
+First off, note that the syntax is atan(y/x) but atan2(y, x), not atan2(y/x). This is important, because by not performing the division you provide additional information, most importantly the individual signs of x and y. If you know the x and y coordinate separately, you know the angle, including the quadrant.
+
+If you go from tan(θ) = y/x to sin(θ) = y/sqrt(x²+y²), then the inverse operation asin takes y and sqrt(x²+y²) and combines that to obtain some information about the angle. Here it doesn't matter whether we perform the division ourself or let some hypothetical asin2 function handle it. The denominator is always positive, so the divided argument contains just as much information as separate numerator and denominator contain. (At least in an IEEE environment where division by zero leads to a correctly-signed infinity.)
+
+If you know the y coordinate and the hypothenuse sqrt(x²+y²) then you know the sine of the angle, but you cannot know the angle itself, since you cannot distinguish between negative and positive x values. Likewise, if you know the x coordinate and the hypothenuse, you know the cosine of the angle but you cannot know the sign of the y value.
+
+So asin2 and acos2 are not mathematically feasible, at least not in an obvious way. If you had some kind of sign encoded into the hypothenuse, things might be different, but I can think of no situation where such a sign would arise naturally.
