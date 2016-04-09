@@ -1,0 +1,75 @@
+import pygame
+
+from pygame.locals import *
+# optional: for convenience, many top level variables are in pygame.locals
+
+pygame.init()
+# initialises all imported pygame modules, e.g. initialises the pygame.display module (so you don’t have to separately do pygame.display.init())
+# pygame is top level package
+
+
+clock = pygame.time.Clock()
+# initialises clock so we can later limit the framerate
+
+screen = pygame.display.set_mode((width, height))
+# pygame.display is the pygame module that controls the main display window and screen.
+# pygame.display.set_mode creates a display Surface
+# The main display Surface is either contained in a window or fullscreen. Once created, treat as a regular Surface. Pygame can only have a single display active - creating a new one will close the previous one.
+# A pygame Surface is used to represent any image. The Surface has a fixed resolution and pixel format.
+# x,y=0,0 is top left
+# width and height are integer number of pixels
+
+player_x = 100 # starting position of our avatar in this game
+player_y = 100
+
+while True:
+	# main loop
+	
+for event in pygame.event.get(): # reads and empties event queue
+	if event.type == pygame.QUIT: 
+# i.e. the red close window button (on Mac) was pressed
+		pygame.quit()
+		exit(0)
+
+pressed = pygame.key.get_pressed() 
+# boolean array containing all keys, True if they’re being pressed
+# there’s another method for detecting key presses: 
+# if event.type == pygame.KEYDOWN:
+#      if event.key==K_UP:
+
+	if pressed[pygame.K_UP]: player_y -= 3
+# pygame.K_UP is the code (index for the ‘pressed’ array) for that key on the keyboard
+	if pressed[pygame.K_DOWN]: player_y += 3
+	if pressed[pygame.K_LEFT]: player_x -= 3
+	if pressed[pygame.K_RIGHT]: player_x += 3
+
+screen.fill((0,0,0))
+# makes the whole screen (main Surface) black - so we don’t get movement smears!
+# unnecessary if we are covering the whole main Surface with a background anyway.
+
+background = pygame.image.load('liquid.bmp').convert()
+# pygame.image.load(‘img.png’) returns a new Surface with the loaded image.
+# The Surface.convert() method, with no arguments, converts the Surface to the same pixel format as the display Surface, ensuring the fastest format for blitting. Good idea if the Surface will be blitted many times
+
+position = (0,0) # coordinates
+screen.blit(background, position))
+# blitting, or Bit blitting, stands for bit block transfer(ring). A blit is a computer graphics operation where 2 - 4 (usually two) bitmaps are combined into one using a boolean function. 
+# at least 2 bitmaps, source and destination, also optionally a “mask” and a “stencil”
+# Blitting deals with the question - how (in what way) do I add this image/sprite/graphic/whatever to the screen? With which boolean function do I combine each pixel?
+# so blitting is copying graphics from one image to another
+# blitting is computationally expensive - don’t do it unnecessarily
+
+# Could always just copy the whole thing onto the screen, but if the image has transparent sections where you want the background to be seen through, can use e.g. binary operator OR (if transparent pixels have value 0, then whatever the value of the pixel in the background will always be chosen for the result) 
+
+width = 60
+height = 60
+
+pygame.draw.rect(screen, colour, pygame.Rect(x,y,width,height))
+# the pygame.draw.* methods directly manipulate the surface you pass to them rather than create a new surface (more efficient), so you don’t need to then blit.
+# i.e. sometimes you blit, sometimes you don’t!
+
+pygame.display.flip()
+# updates the contents of the entire display Surface (by swapping buffers)
+
+clock.tick(60)
+# limits the framerate to max 60 fps
