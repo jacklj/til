@@ -1,5 +1,7 @@
+```
 git config branch.master.remote remote_branch_name
 git config branch.master.merge refs/heads/master
+```
 
 This tells git:
 
