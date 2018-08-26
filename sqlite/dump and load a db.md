@@ -1,14 +1,14 @@
 To create a dump of an existing sqlite db:
-1. open an sqlite db connection/prompt:
-```
-sqlite3 sqlite.db
-```
-2. then, in the sqlite prompt:
-```
-sqlite> .output dump.sql
-sqlite> .dump
-sqlite> .exit
-```
+  1. open an sqlite db connection/prompt:
+  ```
+  sqlite3 sqlite.db
+  ```
+  2. then, in the sqlite prompt:
+  ```
+  sqlite> .output dump.sql
+  sqlite> .dump
+  sqlite> .exit
+  ```
 
 
 In the location you want to copy the db into, delete the existing DB (if any) and then run: 
