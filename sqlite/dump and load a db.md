@@ -1,8 +1,9 @@
-Dump an existing sqlite db:
+To create a dump of an existing sqlite db:
+1. open an sqlite db connection/prompt:
 ```
 sqlite3 sqlite.db
 ```
-then in the sqlite prompt:
+then, in the sqlite prompt:
 ```
 sqlite> .output dump.sql
 sqlite> .dump
