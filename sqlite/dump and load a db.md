@@ -3,13 +3,15 @@ To create a dump of an existing sqlite db:
 ```
 sqlite3 sqlite.db
 ```
-then, in the sqlite prompt:
+2. then, in the sqlite prompt:
 ```
 sqlite> .output dump.sql
 sqlite> .dump
 sqlite> .exit
 ```
-Then in the location you want to copy the db into, delete the existing DB (if any) and then run: 
+
+
+In the location you want to copy the db into, delete the existing DB (if any) and then run: 
 ```
 cat dump.sql | sqlite3 db.sqlite3
 ```
