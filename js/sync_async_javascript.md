@@ -4,7 +4,7 @@ There are special built in functions that are asynchronous, such as
 `setTimeOut` and AJAX requests. These are non-blocking, so subseqent
 lines of code are executed before they return.
 
-This means to check if a function is blocking or non-blocking, you need to look 
+Therefore, to check if a function is blocking or non-blocking, you need to look 
 at its code and see if it calls any of Javascript's special async functions.
 
 It would be interesting to look at the async functions' implementations to see 
