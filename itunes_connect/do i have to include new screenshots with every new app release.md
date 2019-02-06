@@ -1,0 +1,2 @@
+- no: your existing screenshots should be there, in the screenshot section just click on e.g. the 'iPhone 5.5" Display' tab
+- the screenshots section now defaults to the larger screen size tab, screenshots for which you may not have
