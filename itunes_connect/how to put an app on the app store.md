@@ -6,3 +6,4 @@
     - you can then choose the desired version of the app you want to submit instead.
   ![itunes connect remove older build for app store release image](https://i.stack.imgur.com/TcCTq.png)
   
+  NB if the app has already been submitted for review, you just click on "remove this version from review" in the shaded box at the top https://support.magplus.com/hc/en-us/articles/203808568-iOS-Revoking-a-Submitted-Binary. Then you can mouseover the old version in the Build section as described above
